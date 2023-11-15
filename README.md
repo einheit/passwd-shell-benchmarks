@@ -17,6 +17,7 @@ To date, the following languages are represented:
  *  ms powershell
  *  node.js
  *  perl
+ *  php
  *  python
  *  ruby
  *  rust (thanks `timotheosh`!)

@@ -1,5 +1,5 @@
 a.out
-compare.txt
+compare*.txt
 getshells
 getshells-*
 **/target/**
