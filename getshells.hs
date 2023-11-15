@@ -14,7 +14,7 @@ getShell :: String -> String
 getShell = reverse . takeWhile (/= ':') . dropWhile (== '\r') . reverse
 
 getFrequency :: [String] -> [(String, Int)]
-getFrequency xs = toList $ fromListWith (+) $ map (, 1) xs
+getFrequency xs = toList $ fromListWith (+) $ map (\x -> (x, 1)) xs
 
 formatOutput :: (String, Int) -> String
 formatOutput (shell, n) = shell ++ ": " ++ show n
