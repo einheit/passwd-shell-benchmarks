@@ -7,6 +7,7 @@ $fh = fopen("passwd", "r");
 if ($fh) {
     while (($line = fgets($fh)) !== false) {
 	$tmp = substr($line, strrpos($line, ":") + 1);
+	# populate the associative array
 	if (array_key_exists($tmp, $shellcount)) {
 	    $shellcount[$tmp] += 1;
 	} else
@@ -15,6 +16,7 @@ if ($fh) {
     fclose($fh);
 
     foreach($shellcount as $key => $value) {
+	# remove newline to control formatting
 	$key = rtrim($key);
 # echo seems slightly faster than printf
 #	printf("%s\t%d\n", $key, $value);
