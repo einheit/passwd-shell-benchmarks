@@ -1,9 +1,10 @@
+*.o
+*.txt
+.ccls-cache
 a.out
-compare*.txt
 getshells
 getshells-*
 getshells.hi
 getshells.o
 **/target/**
 **/release/**
-
