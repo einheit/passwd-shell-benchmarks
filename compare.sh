@@ -28,10 +28,11 @@ fi
 
 # Check for rust compiler
 if [ -n "$(which cargo 2>/dev/null)" ]; then
-	RSPROG="release/getshells"
+	RSPROG="getshells-rust"
 	cd "getshells_rust" || echo "getshells_rust folder not found"
-	cargo build --release --all-features --target-dir ..
+	cargo build --release --all-features
 	cd ".."
+ 	cp getshells_rust/target/release/getshells ${RSPROG}
 else
 	echo "cargo was not found"
 fi
@@ -132,9 +133,9 @@ else
 	echo "Haskell compiler not found."
 fi
 
-LIST="${LUA} ${CPROG} ${RSPROG} ${GOPROG} ${NODEPROG} ${PYPROG} ${PLPROG} ${JLPROG} ${LISPPROG} ${RBPROG} ${AWK} ${CRPROG} ${PHP} ${PSHELL} ${HSPROG}"
+LIST="${LUA} ${CPROG} ${RSPROG} ${GOPROG} ${NODEPROG} ${PYPROG} ${PLPROG} ${JLPROG} ${LISPPROG} ${RBPROG} ${AWK} ${CRPROG} ${PHP} ${HSPROG} ${PSHELL}"
 
-for i in ${LUA} ${CPROG} ${RSPROG} ${GOPROG} ${NODEPROG} ${PYPROG} ${PLPROG} ${JLPROG} ${LISPPROG} ${RBPROG} ${AWK} ${CRPROG} ${PHP} ${PSHELL} ${HSPROG}; do
+for i in ${LUA} ${CPROG} ${RSPROG} ${GOPROG} ${NODEPROG} ${PYPROG} ${PLPROG} ${JLPROG} ${LISPPROG} ${RBPROG} ${AWK} ${CRPROG} ${PHP} ${HSPROG} ${PSHELL} ; do
     echo "################################################"
     echo "$i"
     $TIME -f "%E\nMax memory usage: %MK" "./${i}"
