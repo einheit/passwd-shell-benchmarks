@@ -1,7 +1,7 @@
 #!/usr/bin/env php
-# first cut at a php cli implementation
 
 <?php
+// first cut at a php cli implementation
 $shellcount = array();
 $fh = fopen("passwd", "r");
 if ($fh) {
