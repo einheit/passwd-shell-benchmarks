@@ -1,5 +1,4 @@
 #!/usr/bin/env php
-
 <?php
 // first cut at a php cli implementation
 $shellcount = array();
@@ -25,4 +24,3 @@ if ($fh) {
     }
 }
 ?> 
-
