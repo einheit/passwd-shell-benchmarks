@@ -128,7 +128,7 @@ fi
 # Check for Haskell compiler
 if [ -n "$(which ghc 2>/dev/null)" ]; then
 	HSPROG=getshells-hs
-	ghc ${HSPROG} getshells.hs -no-keep-hi-files -no-keep-o-files
+	ghc -o ${HSPROG} getshells.hs -no-keep-hi-files -no-keep-o-files
 else
 	echo "Haskell compiler not found."
 fi
